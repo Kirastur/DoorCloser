@@ -8,7 +8,7 @@ The number of seconds the door remains open is configurable.
 You can limit the scope to specific mateials.
 It also synchronizes double doors.
 
-# Contribution
+# Credits
 Fou our role-play-server we have searched for a DoorCloser plugin and found 
 https://www.spigotmc.org/resources/auto-door-closer-and-opener-1-12-x-1-13-2.44093/
 but this plugin seems no longer to be maintainanced (last supported mimecraft version is 1.13.2).
