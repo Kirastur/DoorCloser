@@ -1,0 +1,83 @@
+# Config file for DoorCloser
+# If you make any changes to this file, you must restart
+# your server or use the "/doorcloser reload" command.
+
+# This plugin is written by Kirastur
+# Please contact us at discord if you have any questions
+#   https://discord.gg/MBJjqUHQHR
+
+# This work contains code from the original DoorCloser-Plugin written by Psychlist1972
+# He has released his work using the Apache 2.0 license
+# Please see https://github.com/Psychlist1972/Minecraft-DoorCloser for reference
+
+
+# Time: Time (in integer seconds) to allow the door to remain open
+# This is an estimate. How long it really stays open depends
+# on how quickly Spigot can get to the event handler. It won't
+# be faster than this, but will typically be slower, again, 
+# depending upon server load, number of plugins running, etc.
+Time: 5
+
+# IgnoreIfInCreative: true if you want to ignore the door when the player 
+# is in creative mode. If this is not set to true, you'll never be able to 
+# create an open door unless you turn on sneaking.
+IgnoreIfInCreative: true
+
+# IgnoreIfSneaking: true if you want to ignore the door when the player is 
+# sneaking. This will work for all players, not just someone in creative
+IgnoreIfSneaking: false
+
+# double-door handling
+# SynchronizeDoubleDoor: automatically open and close the second door
+# when you click on one of the doors in a pair. Detection algorithm
+# checks for where the hinges are located.
+SynchronizeDoubleDoor: true
+
+# OptimisticDoubleDoorSync: the synchonization of the double door is
+# normally done one tick later then the player interact event
+# to be sure that the open was not cancelled e.g. by permission or region.
+# But this lead to the effect that in a paired door the second door
+# opens one tick later. To get a better optical effect you can
+# be optimistic and open the paired door at the same time as the original
+# door (and close it just one tick later if the open was cancelled).
+OptimisticDoubleDoorSync: false
+
+# PlaySound: True if the door/gate/trapdoor closing sound should be played
+PlaySound: true
+
+# List of Block IDs for blocks (trap doors, gates, and doors) that you want to auto-close
+# Case is not important, but use the official block names as found here:
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# Materials are ignored by the SynchronizeDoubleDoor-Feature
+# Warning: Do not delete or comment-out all blocks from a list
+TrapDoorBlocks:
+- acacia_trapdoor
+- birch_trapdoor
+- dark_oak_trapdoor
+- jungle_trapdoor
+- oak_trapdoor
+- spruce_trapdoor
+- crimson_trapdoor
+- warped_trapdoor
+- iron_trapdoor
+
+GateBlocks:
+- acacia_fence_gate
+- birch_fence_gate
+- dark_oak_fence_gate
+- jungle_fence_gate
+- oak_fence_gate
+- spruce_fence_gate
+- crimson_fence_gate
+- warped_fence_gate
+
+DoorBlocks:
+- acacia_door
+- birch_door
+- dark_oak_door
+- jungle_door
+- oak_door
+- spruce_door
+- crimson_door
+- warped_door
+- iron_door

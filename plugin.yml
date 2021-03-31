@@ -1,0 +1,20 @@
+name: DoorCloser
+version: 1.0
+description: Close doors behind players
+author: Kirastur
+
+api-version: 1.16
+load: POSTWORLD
+main: de.polarwolf.doorcloser.main.DoorCloserPlugin
+
+commands:
+    doorcloser:
+        description: Command the doorclosing-butler
+        usage: "Usage: '/doorcloser reload|debugenable|debugdisable"
+        permission: doorcloser.admin
+        permission-message: You don't have the permission to command the doorclosing-butler
+
+permissions:
+    doorcloser.admin:
+        description: Should user be able to command the doorclosing-butler?
+        default: op
