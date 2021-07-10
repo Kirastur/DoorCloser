@@ -1,7 +1,6 @@
-# DoorCloser Overview
+# DoorCloser
 This is a plugin for bukkit/spigot minecraft server. 
 
-# General Purpose
 Close doors automatically after a player has opened them.
 Also works for trapdoors and gates.
 The number of seconds the door remains open is configurable.
@@ -23,4 +22,4 @@ Please see the Github Wiki.
 For support please contact us as discord https://discord.gg/MBJjqUHQHR
 
 # Homepage
-comming soon
+https://www.spigotmc.org/resources/doorcloser-butler.90762
