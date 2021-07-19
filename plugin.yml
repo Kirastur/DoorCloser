@@ -1,16 +1,17 @@
 name: DoorCloser
-version: 1.0
+version: 1.1
 description: Close doors behind players
 author: Kirastur
+website: https://www.spigotmc.org/resources/doorcloser-butler.90762
 
 api-version: 1.16
 load: POSTWORLD
-main: de.polarwolf.doorcloser.main.DoorCloserPlugin
+main: de.polarwolf.doorcloser.main.Main
 
 commands:
     doorcloser:
         description: Command the doorclosing-butler
-        usage: "Usage: '/doorcloser reload|debugenable|debugdisable"
+        usage: "Usage: '/doorcloser help"
         permission: doorcloser.admin
         permission-message: You don't have the permission to command the doorclosing-butler
 

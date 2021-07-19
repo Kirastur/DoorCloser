@@ -1,17 +1,21 @@
-# Config file for DoorCloser
-# If you make any changes to this file, you must restart
-# your server or use the "/doorcloser reload" command.
+# - Config file for DoorCloser
+# - If you make any changes to this file, you must 
+# - reload the config using the "/doorcloser reload" command.
 
-# This plugin is written by Kirastur
-# Please contact us at discord if you have any questions
-#   https://discord.gg/MBJjqUHQHR
+# - This plugin is written by Kirastur
+# - Please visit our homepage at
+# -   https://www.spigotmc.org/resources/doorcloser-butler.90762
+# - 
+# - There you can find a link to our support page   
 
-# This work contains code from the original DoorCloser-Plugin written by Psychlist1972
-# He has released his work using the Apache 2.0 license
-# Please see https://github.com/Psychlist1972/Minecraft-DoorCloser for reference
+# - This work contains code from the original DoorCloser-Plugin written by Psychlist1972
+# - He has released his work using the Apache 2.0 license
+# - Please see https://github.com/Psychlist1972/Minecraft-DoorCloser for reference
 
+# If any of the values is not parseable, a default value is used
+# If a material is not known or not an openable, the configuration is rejected
 
-# Time: Time (in integer seconds) to allow the door to remain open
+# Time: Time (in seconds as integer) to allow the door to remain open
 # This is an estimate. How long it really stays open depends
 # on how quickly Spigot can get to the event handler. It won't
 # be faster than this, but will typically be slower, again, 
@@ -27,57 +31,57 @@ IgnoreIfInCreative: true
 # sneaking. This will work for all players, not just someone in creative
 IgnoreIfSneaking: false
 
-# double-door handling
+# PlaySound: True if the door/gate/trapdoor closing sound should be played
+PlaySound: true
+
 # SynchronizeDoubleDoor: automatically open and close the second door
 # when you click on one of the doors in a pair. Detection algorithm
 # checks for where the hinges are located.
 SynchronizeDoubleDoor: true
 
 # OptimisticDoubleDoorSync: the synchonization of the double door is
-# normally done one tick later then the player interact event
+# normally done one tick later than the player interact event
 # to be sure that the open was not cancelled e.g. by permission or region.
-# But this lead to the effect that in a paired door the second door
+# But this leads to the effect that in a paired door the second door
 # opens one tick later. To get a better optical effect you can
 # be optimistic and open the paired door at the same time as the original
 # door (and close it just one tick later if the open was cancelled).
 OptimisticDoubleDoorSync: false
 
-# PlaySound: True if the door/gate/trapdoor closing sound should be played
-PlaySound: true
+# Next you have to define the blocks (doors, gates, and trapdoors)
+# that you want to auto-close.
+# You have an include-list and an exclude-list.
 
-# List of Block IDs for blocks (trap doors, gates, and doors) that you want to auto-close
-# Case is not important, but use the official block names as found here:
-# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# IncludeAllDoors, IncludeAllGates, IncludeAllTrapDoors:
+# To be minecraft version independend, you have the option to add
+# all materials known by this minecraft version to the include list
+IncludeAllDoors: true
+IncludeAllGates: true
+IncludeAllTrapDoors: true
+
+# If you decide to add door/gates/trapdoors of a specific type,
+# you can use an additional include list.
+# Enter the material as defined in the Spigot API
+# See https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#
+# You can only add openable blocks here
+
+# Please uncomment the following lines if you want to use this feature 
+#Include:
+#- ACACIA_DOOR
+#- BIRCH_FENCE_GATE
+  
+# If you have added all materials, and you only want to
+# remove a dedicated material, you can use the exclude list
+# Exclude takes precedence over include
+
+# Please uncomment the following lines if you want to use this feature 
+#Exclude:
+#- CRIMSON_DOOR
+#- CRIMSON_FENCE_GATE 
+#- CRIMSON_TRAPDOOR
+
 # Materials are ignored by the SynchronizeDoubleDoor-Feature
+#
 # Warning: Do not delete or comment-out all blocks from a list
-TrapDoorBlocks:
-- acacia_trapdoor
-- birch_trapdoor
-- dark_oak_trapdoor
-- jungle_trapdoor
-- oak_trapdoor
-- spruce_trapdoor
-- crimson_trapdoor
-- warped_trapdoor
-- iron_trapdoor
-
-GateBlocks:
-- acacia_fence_gate
-- birch_fence_gate
-- dark_oak_fence_gate
-- jungle_fence_gate
-- oak_fence_gate
-- spruce_fence_gate
-- crimson_fence_gate
-- warped_fence_gate
-
-DoorBlocks:
-- acacia_door
-- birch_door
-- dark_oak_door
-- jungle_door
-- oak_door
-- spruce_door
-- crimson_door
-- warped_door
-- iron_door
+# Instead comment-out the list itself.
